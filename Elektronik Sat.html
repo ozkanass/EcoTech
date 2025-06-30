@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTECH - Elektronik Sat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(244, 247, 246);
+            color: rgb(51, 51, 51);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgb(76, 175, 80);
+            color: rgb(255, 255, 255);
+            padding: 0.2em;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            margin-right: 10px;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding-top: 110px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            margin: 7px 10px;
+        }
+        .sidebar a i {
+            margin-right: 10px; 
+        }
+        .sidebar a::after {
+            content: '\00BB'; 
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .sidebar a:hover {
+            background-color: rgb(76, 175, 80);
+        }
+        main {
+            margin-left: 260px;
+            padding: 20px;
+            padding-top: 90px;
+            flex: 1;
+            display: flex;
+            gap: 20px;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .sell-electronics {
+            flex: 2;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .ads-section {
+            flex: 1;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        .ad-item {
+            background-color: rgb(255, 255, 255);
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 49%; 
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-sizing: border-box;
+        }
+        .ad-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        section h2 {
+            color: rgb(76, 175, 80);
+            font-size: 1.8em;
+            border-bottom: 2px solid rgb(76, 175, 80);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        form label {
+            font-weight: bold;
+        }
+        form input, form select, form textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        form .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        form .form-group input, 
+        form .form-group select, 
+        form .form-group textarea {
+            flex: 1;
+        }
+        form .form-group label {
+            flex: 0.3;
+            text-align: right;
+            margin-right: 10px;
+        }
+        form button {
+            background-color: rgb(76, 175, 80);
+            color: white;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: rgb(56, 142, 60);
+        }
+        footer {
+            background-color: rgb(51, 51, 51);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+        }
+
+        
+        .ad-item button {
+            background-color: rgb(76, 175, 80);
+            color: white;
+            padding: 8px 16px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .ad-item button:hover {
+            background-color: rgb(56, 142, 60);
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo-container">
+        <img src="C:\Users\gigab\Downloads\EcoTECH_logo-removebg-preview.png" width="100" alt="EcoTECH Logo">
+        <h1>EcoTECH</h1>
+    </div>
+</header>
+
+<div class="sidebar">
+    <a href=file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ECOTECH%20ANA%20SAYFA.html.html><i class="fas fa-home"></i>Ana Sayfa</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/EcoTech%20Profil.html"><i class="fas fa-user"></i> Profil</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Sipari%C5%9Flerim%20Eco.html"><i class="fas fa-box"></i>Siparişlerim</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Geri%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20sayfas%C4%B1.html"><i class="fas fa-recycle"></i>Geri Dönüşüm</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Telefon%20sat%C4%B1n%20al.html"><i class="fas fa-mobile-alt"></i>Cep Telefonu</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Laptop%20Sat%C4%B1n%20Al.html"><i class="fas fa-laptop"></i>Laptop/Bilgisayar</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Televizyon%20Sat%C4%B1n%20Al.html"><i class="fas fa-tv"></i>Televizyon</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Elektronik%20Sat.html"><i class="fas fa-hand-holding-usd"></i>Elektronik Sat</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/hakk%C4%B1m%C4%B1zda.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ileti%C5%9Fim.html"><i class="fas fa-envelope"></i>İletişim</a>
+</div>
+
+
+<main>
+    <div class="main-content">
+        <section class="sell-electronics">
+            <h2>Elektronik Sat</h2>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="device-name">Cihaz Adı:</label>
+                    <input type="text" id="device-name" name="device-name" placeholder="Cihaz adı (ör: iPhone 14)">
+                </div>
+
+                <div class="form-group">
+                    <label for="device-condition">Durumu:</label>
+                    <select id="device-condition" name="device-condition">
+                        <option value="new">Yeni</option>
+                        <option value="used">Kullanılmış</option>
+                        <option value="damaged">Hasarlı</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="device-description">Açıklama:</label>
+                    <textarea id="device-description" name="device-description" rows="5" placeholder="Cihazın durumu hakkında detaylı bilgi"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="device-image">Cihaz Görseli:</label>
+                    <input type="file" id="device-image" name="device-image" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-info">İletişim Bilgileri:</label>
+                    <input type="text" id="contact-info" name="contact-info" placeholder="Telefon veya E-posta">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Fiyat:</label>
+                    <input type="text" id="price" name="price" placeholder="Fiyat belirleyin">
+                </div>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+		<h2>İlanlarım</h2>
+        <section class="ads-section">
+            <div class="ad-item">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel 2\Adsız tasarım (1).png" alt="İlan Görseli">
+                <div>
+                    <h3>iPhone 14</h3>
+                    <p>Kullanılmış - Temiz</p>
+                    <h3>Fiyat: ₺40.000</h3>
+                    <button type="submit">İlanı Güncelle</button>
+                    <button type="submit">İlanı Kaldır</button>
+                </div>
+            </div>
+            <div class="ad-item">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel 3\Adsız tasarım.png" alt="İlan Görseli">
+                <div>
+                    <h3>Lenovo Laptop</h3>
+                    <p>Hasarlı - Parçalar Satılık</p>
+                    <h3>Fiyat: ₺5.000</h3>
+                    <button type="submit">İlanı Güncelle</button>
+                    <button type="submit">İlanı Kaldır</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>"EcoTECH - Doğa Dostu Alışverişin Güvencesi"</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siparişlerim - EcoTECH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(244, 247, 246);
+            color: rgb(51, 51, 51);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgb(76, 175, 80);
+            color: rgb(255, 255, 255);
+            padding: 0.2em;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            margin-right: 10px;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        header .search-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        header input[type="text"] {
+            padding: 0.5em;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+            padding-left: 2.5em;
+        }
+        header .search-container img {
+            position: absolute;
+            left: 290px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+        }
+        header .login-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        header .login-container a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+        header .login-container a i {
+            margin-right: 5px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding-top: 110px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            margin: 7px 10px;
+        }
+        .sidebar a i {
+            margin-right: 10px; 
+        }
+        .sidebar a::after {
+            content: '\00BB'; 
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .sidebar a:hover {
+            background-color: rgb(76, 175, 80);
+        }
+        main {
+            margin-left: 260px;
+            padding: 20px;
+            padding-top: 90px;
+        }
+        h2 {
+            color: rgb(76, 175, 80);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .order-card {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+            align-items: center;
+        }
+        .order-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .order-details {
+            flex-grow: 1;
+        }
+        .order-details h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .order-details p {
+            color: #777;
+            margin: 5px 0;
+        }
+        .order-status {
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .status-completed {
+            background-color: #28a745;
+            color: white;
+        }
+        .status-pending {
+            background-color: #ffc107;
+            color: white;
+        }
+        .status-cancelled {
+            background-color: #dc3545;
+            color: white;
+        }
+        .view-details {
+            color: rgb(76, 175, 80);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="C:\Users\gigab\Downloads\EcoTECH_logo-removebg-preview.png" width="100" alt="EcoTECH Logo">
+        <h1>EcoTECH</h1>
+    </div>
+    <div class="search-container">
+        <img src="C:\Users\gigab\Downloads\pngtree-magnifying-glass-line-icon-png-image_9015864.png" alt="Search Icon">
+        <input type="text" placeholder="Ürün Ara">
+    </div>
+    <div class="login-container">
+        <a href="#cart"><i class="fas fa-shopping-cart"></i>Sepetim</a>
+        <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/giri%C5%9F%20yap.html"><i class="fas fa-sign-in-alt"></i>Giriş Yap</a> 
+        <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/kaydol.html"><i class="fas fa-user-plus"></i>Kaydol</a>
+    </div>
+</header>
+
+<div class="sidebar">
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ECOTECH%20ANA%20SAYFA.html.html"><i class="fas fa-home"></i>Ana Sayfa</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/EcoTech%20Profil.html"><i class="fas fa-user"></i> Profil</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Sipari%C5%9Flerim%20Eco.html"><i class="fas fa-box"></i>Siparişlerim</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Geri%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20sayfas%C4%B1.html"><i class="fas fa-recycle"></i>Geri Dönüşüm</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Telefon%20sat%C4%B1n%20al.html"><i class="fas fa-mobile-alt"></i>Cep Telefonu</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Laptop%20Sat%C4%B1n%20Al.html"><i class="fas fa-laptop"></i>Laptop/Bilgisayar</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Televizyon%20Sat%C4%B1n%20Al.html"><i class="fas fa-tv"></i>Televizyon</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Elektronik%20Sat.html"><i class="fas fa-hand-holding-usd"></i>Elektronik Sat</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/hakk%C4%B1m%C4%B1zda.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ileti%C5%9Fim.html"><i class="fas fa-envelope"></i>İletişim</a>
+</div>
+
+<main>
+    <section id="orders">
+        <h2>Siparişlerim</h2>
+        <p>Burada siparişlerinizin detaylarını görüntüleyebilirsiniz:</p>
+
+        <div class="order-card">
+            <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\air13teaser.jpg" alt="Eski Laptop">
+            <div class="order-details">
+		<a href="#order-details" class="view-details">Sipariş Detayları</a>	
+		<h4>Macbook Air</h4>
+        <p>Sipariş Tarihi:03.11.2024</p>
+        <p>Ödenen Tutar: <strong>₺40.000</strong></p>
+        <p>Sipariş Numarası: <strong>#1234567</strong></p>
+        <p>Tahmini Teslimat: <strong>06.11.2024</strong></p>
+        
+    </div>
+    <div class="order-status status-completed">Tamamlandı</div>
+</div>
+
+
+        <div class="order-card">
+            <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\1-289_large.webp"alt="Eski Telefon">
+            <div class="order-details">
+			<a href="#order-details" class="view-details">Sipariş Detayları</a>
+                <h4>İphone 16Pro Max</h4>
+                <p>Sipariş Tarihi: 03.11.202</p>
+				<p>Ödenen Tutar: <strong>₺85.000</strong></p>
+        <p>Sipariş Numarası: <strong>#123456</strong></p>
+        <p>Tahmini Teslimat: <strong>06.11.2024</strong></p>
+            </div>
+            <div class="order-status status-pending">Beklemede</div>
+        </div>
+
+        <div class="order-card">
+            <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\shopping.webp" alt="Televizyon">
+            <div class="order-details">
+			 <a href="#order-details" class="view-details">Sipariş Detayları</a>
+                <h4>Samsung TV</h4>
+                <p>Sipariş Tarihi: 03.11.202</p>
+				<p>Ödenen Tutar: <strong>₺15.000</strong></p>
+        <p>Sipariş Numarası: <strong>#12345</strong></p>
+        <p>Tahmini Teslimat: <strong>06.11.2024</strong></p>
+               
+            </div>
+            <div class="order-status status-cancelled">İptal Edildi</div>
+        </div>
+
+    </section>
+</main>
+
+</body>
+</html>

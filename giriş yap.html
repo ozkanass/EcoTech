@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTECH Giriş</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(244, 247, 246); 
+            color: rgb(51, 51, 51);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgb(76, 175, 80); 
+            color: rgb(255, 255, 255); 
+            padding: 0.2em; 
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            left: 0; 
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            margin-right: 10px;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            font-family: 'Arial', sans-serif; 
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding-top: 110px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            margin: 7px 10px;
+        }
+        .sidebar a i {
+            margin-right: 10px; 
+        }
+        .sidebar a::after {
+            content: '\00BB'; 
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .sidebar a:hover {
+            background-color: rgb(76, 175, 80);
+        }
+        main {
+            margin-left: 260px; 
+            padding: 20px;
+            padding-top: 90px; 
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background-color: rgb(255, 255, 255); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container h2 {
+            color: rgb(76, 175, 80); 
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid rgb(76, 175, 80); 
+            padding-bottom: 10px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            color: rgb(51, 51, 51);
+            font-weight: bold;
+        }
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(76, 175, 80); 
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: rgb(51, 51, 51);
+        }
+        footer {
+            background-color: rgb(51, 51, 51); 
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="C:\Users\gigab\Downloads\EcoTECH_logo-removebg-preview.png" width="100" alt="EcoTECH Logo">
+        <h1>EcoTECH</h1>
+    </div>
+</header>
+
+<div class="sidebar">
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ECOTECH%20ANA%20SAYFA.html.html"><i class="fas fa-home"></i>Ana Sayfa</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/EcoTech%20Profil.html"><i class="fas fa-user"></i> Profil</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Sipari%C5%9Flerim%20Eco.html"><i class="fas fa-box"></i>Siparişlerim</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Geri%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20sayfas%C4%B1.html"><i class="fas fa-recycle"></i>Geri Dönüşüm</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Telefon%20sat%C4%B1n%20al.html"><i class="fas fa-mobile-alt"></i>Cep Telefonu</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Laptop%20Sat%C4%B1n%20Al.html"><i class="fas fa-laptop"></i>Laptop/Bilgisayar</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Televizyon%20Sat%C4%B1n%20Al.html"><i class="fas fa-tv"></i>Televizyon</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Elektronik%20Sat.html"><i class="fas fa-hand-holding-usd"></i>Elektronik Sat</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/hakk%C4%B1m%C4%B1zda.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ileti%C5%9Fim.html"><i class="fas fa-envelope"></i>İletişim</a>
+</div>
+
+<main>
+    <div class="form-container" id="login">
+        <h2>Giriş Yap</h2>
+        <form action="#" method="post">
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>"EcoTECH "Doğa Dostu Alışverişin Güvencesi"</p>
+</footer>
+
+</body>
+</html>
+
+

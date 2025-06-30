@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefon Satın Al</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(244, 247, 246);
+            color: rgb(51, 51, 51);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgb(76, 175, 80);
+            color: rgb(255, 255, 255);
+            padding: 0.2em;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            margin-right: 10px;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        header .login-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        header .login-container a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+        header .login-container a i {
+            margin-right: 5px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding-top: 110px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            margin: 7px 10px;
+        }
+        .sidebar a i {
+            margin-right: 10px; 
+        }
+        .sidebar a::after {
+            content: '\00BB'; 
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .sidebar a:hover {
+            background-color: rgb(76, 175, 80);
+        }
+        main {
+            margin-left: 260px;
+            padding: 20px;
+            padding-top: 90px;
+        }
+        section {
+            padding: 20px;
+        }
+        .category-wrapper {
+            display: flex;
+            gap: 20px; 
+            align-items: center;
+        }
+        .category-container {
+            flex: 1; 
+        }
+        .category-container select {
+            width: 100%; 
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .product-card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    max-width: 250px;
+    margin: 0 auto; 
+    min-height: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.1em; 
+    margin: 10px 0;
+    word-wrap: break-word; 
+}
+
+.product-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.product-card button {
+    background-color: rgb(76, 175, 80);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 15px;  
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center; 
+}
+
+.product-card button:hover {
+    background-color: rgb(56, 142, 60);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px;
+}
+
+.product-card button {
+    background-color: rgb(76, 175, 80);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 15px; 
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center; 
+}
+
+.product-card button:hover {
+    background-color: rgb(56, 142, 60);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+        footer {
+            background-color: rgb(51, 51, 51);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="C:\Users\gigab\Downloads\EcoTECH_logo-removebg-preview.png" width="100" alt="EcoTECH Logo">
+        <h1>EcoTECH</h1>
+    </div>
+    <div class="login-container">
+        <a href="#cart"><i class="fas fa-shopping-cart"></i>Sepetim</a>
+        <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/giri%C5%9F%20yap.html"><i class="fas fa-sign-in-alt"></i>Giriş Yap</a> 
+        <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/kaydol.html"><i class="fas fa-user-plus"></i>Kaydol</a>
+    </div>
+</header>
+
+<div class="sidebar">
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ECOTECH%20ANA%20SAYFA.html.html"><i class="fas fa-home"></i>Ana Sayfa</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/EcoTech%20Profil.html"><i class="fas fa-user"></i> Profil</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Sipari%C5%9Flerim%20Eco.html"><i class="fas fa-box"></i>Siparişlerim</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Geri%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20sayfas%C4%B1.html"><i class="fas fa-recycle"></i>Geri Dönüşüm</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Telefon%20sat%C4%B1n%20al.html"><i class="fas fa-mobile-alt"></i>Cep Telefonu</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Laptop%20Sat%C4%B1n%20Al.html"><i class="fas fa-laptop"></i>Laptop/Bilgisayar</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Televizyon%20Sat%C4%B1n%20Al.html"><i class="fas fa-tv"></i>Televizyon</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/Elektronik%20Sat.html"><i class="fas fa-hand-holding-usd"></i>Elektronik Sat</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/hakk%C4%B1m%C4%B1zda.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+    <a href="file:///C:/Users/gigab/OneDrive/Masa%C3%BCst%C3%BC/EcoTech/ileti%C5%9Fim.html"><i class="fas fa-envelope"></i>İletişim</a>
+</div>
+
+
+<main>
+    <section id="phones">
+        <h2>Cep Telefonu</h2>
+        <div class="category-wrapper">
+            <div class="category-container">
+                <label for="category1">Marka Seçin:</label>
+                <select id="category1">
+                    <option value="Markalar">Tüm Markalar</option>
+                    <option value="iphone">iPhone</option>
+                    <option value="xiaomi">Xiaomi</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="huawei">Huawei</option>
+					<option value="huawei">Vivo</option>
+                </select>
+            </div>
+			<br><br>
+            <div class="category-container">
+                <label for="category2">Model Seçin:</label>
+                <select id="category2">
+                    <option value="Modeller">Tüm Modeller</option>
+                    <option value="iphone">iPhone 11</option>
+                    <option value="iphone">iPhone 12</option>
+                    <option value="iphone">iPhone 13</option>
+                    <option value="iphone">iPhone 14</option>
+                    <option value="iphone">iPhone 15</option>
+                    <option value="iphone">iPhone 16</option>
+                    <option value="samsung">Samsung Galaxy S24 Ultra</option>
+                    <option value="samsung">Samsung Galaxy S23 Ultra</option>
+                    <option value="samsung">Samsung Galaxy Z Fold</option>
+                    <option value="samsung">Samsung Galaxy Z Flip</option>
+                    <option value="samsung">Samsung Galaxy S22 Ultra</option>
+                    <option value="xiaomi">Xiaomi 12T</option>
+                    <option value="xiaomi">Xiaomi 13 Pro</option>
+                    <option value="xiaomi">Xiaomi 14T</option>
+                    <option value="xiaomi">Xiaomi 14T PRO</option>
+                    <option value="xiaomi">Xiaomi 14 Ultra</option>
+                    <option value="huawei">Huawei</option>
+                </select>
+            </div>
+        </div>
+		<br><br>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\1-289_large.webp" alt="iPhone">
+                <h3>iPhone 16 Pro Max</h3>
+                <p>Fiyat: 85.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\143409-1-1_large.webp" alt="Samsung">
+                <h3>Samsung Galaxy S24Ultra</h3>
+                <p>Fiyat: 50.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\xiaomi-14t-6f6a0d.png" alt="Xiaomi">
+                <h3>Xiaomi 14T</h3>
+                <p>Fiyat: 20.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\huawei-p60-pro.jpg" alt="Huawei">
+                <h3>Huawei P60 Pro</h3>
+                <p>Fiyat: 40.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\146239-1_large.webp" alt="Samsung">
+                <h3>Samsung Z Fold 6</h3>
+                <p>Fiyat: 40.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\b3bfa43db92f8c96b5c4dd344adc0a97.png" alt="Vivo">
+                <h3>Vivo V29</h3>
+                <p>Fiyat: 18.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+			            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\format_webp.webp"alt="iPhone">
+                <h3>iPhone 16 Pro Max</h3>
+                <p>Fiyat: 85.000 TL</p>
+                <button type="submit">Satın Al</button>
+            </div>
+			            <div class="product-card">
+                <img src="C:\Users\gigab\OneDrive\Masaüstü\eco görsel\format_webp (2).webp"alt="iPhone">
+                <h3>iPhone 16 Pro Max</h3>
+                <p>Fiyat: 85.000 TL</p>
+                <button type="submit">Satın Al</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>"EcoTECH "Doğa Dostu Alışverişin Güvencesi"</p>
+</footer>
+
+</body>
+</html>
